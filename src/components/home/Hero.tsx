@@ -55,7 +55,7 @@ const Hero = () => (
         <div
   className="h-56 sm:h-64 md:h-72 rounded-xl border border-gray-700 flex items-center justify-center bg-center bg-cover relative overflow-hidden"
   style={{
-    backgroundImage: "url('/homepage.jpg')", 
+    backgroundImage: "url('/Homepage.jpg')", 
      }}
 >
   

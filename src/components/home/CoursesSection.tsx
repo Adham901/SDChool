@@ -20,7 +20,7 @@ const CoursesSection = () => {
     {
       id: 'presentation',
       title: 'Dental Presentation Design',
-      image: '/homepage.jpg',
+      image: '/Homepage.jpg',
       pitch: 'صمم عروض تقديمية علمية وسريرية احترافية للأطباء والمحاضرين',
     },
     {
