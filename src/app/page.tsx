@@ -78,10 +78,6 @@ export default function LandingPageDark() {
       <ROISection />
       <GoldenIdeaSection />
       <ReachClientSection />
-      {/* <WhyPDS />
-      <DiplomaStructure />
-      <TechSpecs />
-      <MarketingTips /> */}
       <Testimonials />
       <Instructor />
       <FAQ />
