@@ -1,19 +1,33 @@
 /* =======================
-   🧩 Courses Section
+   🧩 Courses Section (Fixed RTL/LTR Issue)
    ======================= */
 
 'use client';
-import React, {  useState } from 'react';
+import React, { useState } from 'react';
 import { Check, X } from 'lucide-react';
 import Image from 'next/image';
 
+const wrapLatin = (text: string) => {
+  // يقسم النص إلى أجزاء (إنجليزي / عربي)
+  const parts = text.split(/([A-Za-z0-9\-\+\.\(\)\/ ]+)/g);
+  return parts.map((part, i) =>
+    /[A-Za-z0-9]/.test(part) ? (
+      <span key={i} dir="ltr" className="inline-block">
+        {part}
+      </span>
+    ) : (
+      <span key={i}>{part}</span>
+    )
+  );
+};
+
 const CoursesSection = () => {
-  const [selectedCourse, setSelectedCourse] = useState<string | null>(null)
+  const [selectedCourse, setSelectedCourse] = useState<string | null>(null);
 
   const courses = [
     {
       id: 'motion-desktop',
-      title: 'Dental Motion Design ',
+      title: 'Dental Motion Design',
       image: '/dentalmotion.jpg',
       pitch: 'تعلم تصميم فيديوهات موشن احترافية لشرح الحالات والتسويق للعيادات',
     },
@@ -35,15 +49,15 @@ const CoursesSection = () => {
       image: '/dentalwithphone.jpg',
       pitch: 'صمم فيديوهات سريعة باستخدام الهاتف فقط قبل/ بعد الحالات',
     },
-  ]
+  ];
 
   const courseDetails: Record<
     string,
     {
-      title: string
-      subtitle: string
-      description: string
-      sections: { title: string; items: string[] }[]
+      title: string;
+      subtitle: string;
+      description: string;
+      sections: { title: string; items: string[] }[];
     }
   > = {
     'motion-desktop': {
@@ -55,17 +69,21 @@ const CoursesSection = () => {
         { title: 'البرامج المستخدمة:', items: ['Adobe After Effects', 'Adobe Illustrator'] },
         {
           title: 'المتطلبات:',
-          items: ['جهاز لابتوب RAM 16+', 'كارت شاشة قوي', 'اشتراك Adobe Creative Cloud'],
+          items: [
+            'جهاز لابتوب RAM 16+',
+            'كارت شاشة قوي',
+            'اشتراك لبرامج ادوبي وسيتم توفيرها ف الكورس بسعر رمزي لتعاون PDS مع شركات مختصه ',
+          ],
         },
         {
           title: 'أهمية الكورس:',
           items: [
-            'احتراف عمل فيديوهات تسويقيه للعيادات والمراكز',
-            'تكوين شبكه علاقات مع الاطباء من خلال تقديم خدماتك',
-            'التميز الاكاديمي وشرح الحالات باسلوب بصري جذاب',
-            'تسويق شخصي قوي علي السوشيال ميديا',
-            'تطوير مهارات عرض الحالات والاقناع',
-            'ميزه تنافسيه في سوق العمل ',
+            'احتراف عمل فيديوهات تسويقية للعيادات والمراكز',
+            'تكوين شبكة علاقات مع الأطباء من خلال تقديم خدماتك',
+            'التميز الأكاديمي وشرح الحالات بأسلوب بصري جذاب',
+            'تسويق شخصي قوي على السوشيال ميديا',
+            'تطوير مهارات عرض الحالات والإقناع',
+            'ميزة تنافسية في سوق العمل',
           ],
         },
       ],
@@ -85,10 +103,10 @@ const CoursesSection = () => {
         {
           title: 'أهمية الكورس:',
           items: [
-            'احتراف تقديم الابحاث والحالات في المؤتمرات و الجامعات',
-            'جذب الانتباه والتاثير في لجان التحكيم او الحضور',
-            'دعم خطط العلاج ورفع ثقه المرضي',
-            'مهارة اساسية لاي طبيب بيشتغل او بيعلم',
+            'احتراف تقديم الأبحاث والحالات في المؤتمرات والجامعات',
+            'جذب الانتباه والتأثير في لجان التحكيم أو الحضور',
+            'دعم خطط العلاج ورفع ثقة المرضى',
+            'مهارة أساسية لأي طبيب يعمل أو يدرّس',
           ],
         },
       ],
@@ -108,10 +126,10 @@ const CoursesSection = () => {
         {
           title: 'أهمية الكورس:',
           items: [
-            'تحويل العياده الي براند بصري مميز',
-            'ابراز العروض والخدمات بشكل يشد الانتباه',
+            'تحويل العيادة إلى براند بصري مميز',
+            'إبراز العروض والخدمات بشكل يشد الانتباه',
             'توفير تكاليف التصميم الخارجي والتحكم الكامل في محتواك',
-            'جذب العالملين وتحويلهم لمرضي فعليين',
+            'جذب العملاء وتحويلهم لمرضى فعليين',
           ],
         },
       ],
@@ -131,28 +149,34 @@ const CoursesSection = () => {
         {
           title: 'أهمية الكورس:',
           items: [
-            'تقدر تعمل فيديوهات توضيحيه للحالات او العروض ف دقائق',
-            'مناسب جدا للناس الي معندهاش لابتوب او وقت',
-            'بدايه ذكيه للدخل اضافي من تصميم الفيديوهات',
-            'قوة براند شخصي علي السوشيل ميديا من غير مصاريف عالية'
+            'تقدر تعمل فيديوهات توضيحية للحالات أو العروض في دقائق',
+            'مناسب جدًا للناس اللي معندهاش لابتوب أو وقت',
+            'بداية ذكية لدخل إضافي من تصميم الفيديوهات',
+            'قوة براند شخصي على السوشيال ميديا بدون مصاريف عالية',
           ],
         },
       ],
     },
-  }
+  };
 
-  const selected = selectedCourse ? courseDetails[selectedCourse] : null
+  const selected = selectedCourse ? courseDetails[selectedCourse] : null;
 
   return (
     <section
       id="courses"
-      className="slide-section opacity-0 transform transition-all duration-700 py-16 bg-[#111827] text-gray-300"
+      dir="rtl"
+      className="slide-section opacity-0 transform transition-all duration-700 py-16 bg-[#1a1a1a] text-gray-300"
     >
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+      <div className="max-w-6xl mx-auto   px-4 sm:px-6">
         {/* العنوان الرئيسي */}
-        <div className="text-center">
-          <h2 className="text-3xl font-bold text-white">الدورات</h2>
-          <p className="mt-2 text-gray-300 text-base">
+        <div className="text-center ">
+          <h2 className="text-3xl font-bold text-white">الدورات
+    
+  <span className="block mx-auto w-20 h-1 bg-gradient-to-r from-rose-500 to-blue-400 mt-3 rounded-full "></span>
+</h2>
+
+         
+          <p className="mt-4 text-gray-300 text-base ">
             مجموعة من الدورات العملية التي تبني مهارات قابلة للبيع في سوق طب الأسنان.
           </p>
         </div>
@@ -164,18 +188,17 @@ const CoursesSection = () => {
               key={c.id}
               className="border border-gray-700 rounded-xl overflow-hidden shadow-sm hover:border-rose-500 transition bg-[#1f2937] flex flex-col"
             >
-             <div className="relative w-full h-40">
-  <Image
-    src={c.image}
-    alt={c.title}
-    fill
-    className="object-cover"
-    sizes="(max-width: 768px) 100vw, 25vw"
-    priority
-  />
-</div>
+              <div className="relative w-full h-40">
+                <Image
+                  src={c.image}
+                  alt={c.title}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 25vw"
+                  priority
+                />
+              </div>
 
-              
               <div className="flex flex-col justify-between flex-grow p-5 text-center">
                 <div>
                   <h3 className="font-semibold text-lg text-white">{c.title}</h3>
@@ -221,10 +244,11 @@ const CoursesSection = () => {
             {selected.sections.map((sec, i) => (
               <div key={i} className="mb-4">
                 <h3 className="text-lg font-semibold text-white mb-2">{sec.title}</h3>
-                <ul className="space-y-1 text-sm">
+                <ul className="space-y-1 text-sm" dir="auto">
                   {sec.items.map((item, j) => (
                     <li key={j} className="flex items-start gap-2">
-                      <Check className="w-4 h-4 text-rose-400 mt-1" /> {item}
+                      <Check className="w-4 h-4 text-rose-400 mt-1" />
+                      <span className="leading-tight">{wrapLatin(item)}</span>
                     </li>
                   ))}
                 </ul>
@@ -234,8 +258,7 @@ const CoursesSection = () => {
         </div>
       )}
     </section>
-  )
-}
+  );
+};
 
-
-export default  CoursesSection
+export default CoursesSection;

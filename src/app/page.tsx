@@ -16,6 +16,12 @@ import Audience from '@/components/home/Audience';
 import Instructor from '@/components/home/Instructor';
 import FAQ from '@/components/home/Faqsection';
 import CTA from '@/components/home/Ctasection';
+import AboutPDS from '@/components/home/Aboutus';
+import DiplomaAudience from '@/components/home/Targetadience';
+import DiplomaFeatures from '@/components/home/Diplomafeatures';
+import ROISection from '@/components/home/Roi';
+import GoldenIdeaSection from '@/components/home/Goldenidea';
+import ReachClientSection from '@/components/home/Reachtogoal';
 
 /* =======================
    🎞️ Animation Hook
@@ -64,14 +70,19 @@ export default function LandingPageDark() {
     <main className="min-h-screen font-sans bg-[#111827]">
       <Navbar />
       <Hero />
+      <AboutPDS/>
       <Vision />
-      <WhyPDS />
       <CoursesSection />
+      <DiplomaAudience/>
+      <DiplomaFeatures/>
+      <ROISection />
+      <GoldenIdeaSection />
+      <ReachClientSection />
+      {/* <WhyPDS />
       <DiplomaStructure />
       <TechSpecs />
-      <MarketingTips />
+      <MarketingTips /> */}
       <Testimonials />
-      <Audience />
       <Instructor />
       <FAQ />
       <CTA />
