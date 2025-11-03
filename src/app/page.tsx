@@ -1,6 +1,7 @@
 'use client';
 import React, { useEffect, useState } from 'react';
 import { Check, Play, Users, BookOpen, Menu, X } from 'lucide-react';
+import Image from 'next/image';
 
 /* =======================
    🎞️ Animation Hook
@@ -10,7 +11,7 @@ function useSlideAnimation() {
     const sections = document.querySelectorAll('.slide-section');
     const observer = new IntersectionObserver(
       (entries) => {
-        entries.forEach((entry, i) => {
+        entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add('show');
           }
@@ -406,7 +407,7 @@ const CoursesSection = () => {
               key={c.id}
               className="border border-gray-700 rounded-xl overflow-hidden shadow-sm hover:border-rose-500 transition bg-[#1f2937] flex flex-col"
             >
-              <img src={c.image} alt={c.title} className="w-full h-40 object-cover" />
+              <Image src={c.image} alt={c.title} className="w-full h-40 object-cover" />
               
               <div className="flex flex-col justify-between flex-grow p-5 text-center">
                 <div>
@@ -582,7 +583,7 @@ const Testimonials = () => (
       <div className="mt-12 flex justify-center">
         <div className="relative w-full max-w-3xl rounded-2xl p-[3px] bg-gradient-to-r from-rose-500 via-purple-500 to-blue-500 animate-gradient-slow">
           <div className="rounded-2xl overflow-hidden bg-[#111827]">
-            <img
+            <Image
               src="/opinion.jpg" // ← حط هنا صورة الريفيوهات المجمعة
               alt="Testimonials"
               className="w-full h-auto object-cover rounded-2xl"
@@ -627,7 +628,7 @@ const Instructor = () => (
 
       <div className="mt-10 flex flex-col sm:flex-row items-center gap-6 justify-center">
         <div className="w-28 h-28 sm:w-36 sm:h-36 bg-gray-700 rounded-full flex items-center justify-center text-gray-400">
-            <img
+            <Image
                 src="/loading2.jpg"
                 alt="Profile"
                 className="w-full h-full rounded-full object-cover"
