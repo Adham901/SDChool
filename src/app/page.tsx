@@ -66,7 +66,7 @@ export default function LandingPageDark() {
   useSlideAnimation();
 
   return (
-    <main className="min-h-screen font-sans bg-[#1a1a1a]">
+    <main className="min-h-screen font-sans bg-white">
       <Navbar />
       <Hero />
       <AboutPDS/>
