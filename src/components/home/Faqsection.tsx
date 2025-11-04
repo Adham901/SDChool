@@ -3,7 +3,7 @@
    ======================= */
 import React from 'react';
 const FAQ = () => (
-  <section id="faq" className="slide-section opacity-0 transform transition-all duration-700 py-16 bg-[#1a1a1a] text-gray-300">
+  <section id="faq" dir='rtl' className="slide-section opacity-0 transform transition-all duration-700 py-16 bg-[#1a1a1a] text-gray-300">
     <div className="max-w-4xl mx-auto px-4 sm:px-6">
       <h3 className="text-2xl font-bold text-white text-center">الأسئلة الشائعة</h3>
       <div className="mt-8 space-y-4">

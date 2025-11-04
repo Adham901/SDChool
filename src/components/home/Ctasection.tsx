@@ -8,13 +8,14 @@ import { Instagram, MessageCircle } from 'lucide-react';
    ======================= */
 const CTA = () => (
   <section
+  dir='rtl'
     id="enroll"
     className="slide-section opacity-0 transform transition-all duration-700 py-16 bg-red-600 text-white text-center sm:text-left"
   >
     <div className="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col lg:flex-row items-center justify-between gap-6">
       <div>
-        <h3 className="text-2xl font-bold">جاهز تبني مهارات تربحك؟</h3>
-        <p className="mt-2 text-sm text-rose-100 max-w-xl">
+        <h3 className="text-2xl text-right font-bold">جاهز تبني مهارات تربحك؟</h3>
+        <p className="mt-2 text-right text-sm text-rose-100 max-w-xl">
           انضم لدبلومة PDS واحصل على أدوات تصميم وموشن وبرزنتيشن جاهزة للتطبيق في العيادات والمؤتمرات.
         </p>
       </div>

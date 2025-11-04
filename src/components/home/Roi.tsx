@@ -4,7 +4,7 @@
 
 'use client';
 import React from 'react';
-import { User, UserCheck, Users, Wrench , Check } from 'lucide-react';
+import { User, UserCheck, UserPlus, Wrench, Check } from 'lucide-react';
 
 const ROISection = () => {
   const roiItems = [
@@ -24,12 +24,21 @@ const ROISection = () => {
       title: 'طبيب امتياز',
       points: [
         'هتستخدم مهاراتك في بناء محتوى للعيادة مباشرة.',
-        'تنفيذ باكيدج شهرية: 6 بوستات + 2 ريلز = سعر الدبلومه',
-        'شراء الدبلومه وتعليمها لاحد المساعدين معك يوفر عليك الاشتراك مع شركات تسويق مدى الحياة.',
+        'تنفيذ باكيدج شهرية: 6 بوستات + 2 ريلز = سعر الدبلومة.',
+        'شراء الدبلومة وتعليمها لأحد المساعدين معك يوفر عليك الاشتراك مع شركات تسويق مدى الحياة.',
       ],
     },
     {
-      icon: <Users className="w-8 h-8 text-red-600 mx-auto mb-3" />,
+      icon: <UserPlus className="w-8 h-8 text-red-600 mx-auto mb-3" />,
+      title: 'طبيب أسنان',
+      points: [
+        'هتستخدم مهاراتك في بناء محتوى للعيادة مباشرة.',
+        'تنفيذ باكيدج شهرية: 6 بوستات + 2 ريلز = سعر الدبلومه.',
+        'شراء الدبلومة وتعليمها لأحد المساعدين معك يوفر عليك الاشتراك مع شركات تسويق مدى الحياة.',
+      ],
+    },
+        {
+      icon: <User className="w-8 h-8 text-red-600 mx-auto mb-3" />,
       title: 'طبيب محاضر',
       points: [
         'تبني عروض علمية جذابة وسريعة التجهيز (بحث، حالة، بوستر).',
@@ -38,10 +47,10 @@ const ROISection = () => {
       ],
     },
     {
-      icon: <Wrench  className="w-8 h-8 text-red-600 mx-auto mb-3" />,
+      icon: <Wrench className="w-8 h-8 text-red-600 mx-auto mb-3" />,
       title: 'فني معمل أسنان',
       points: [
-        'تعمل كتالوج رقمي موحّد للخدمات، توزعه على العيادات.',
+        'تعمل كتالوج رقمي موحد للخدمات، توزعه على العيادات.',
         'تعمل فيديوهات موشن تشرح خطوات تصنيع التركيبات.',
         'تعرض حزمة تصميم محتوى للمعمل (فلايرز، كاروسيل، سوشيال) تغطي تكلفة الدبلومة.',
         'تبني عروض تقديمية لمعامل أو مستثمرين أو شراكات.',
@@ -53,14 +62,12 @@ const ROISection = () => {
   return (
     <section
       id="roi"
+      dir="rtl"
       className="slide-section opacity-0 transform transition-all duration-700 py-16 bg-white text-black"
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         {/* العنوان */}
-        <h2
-          dir="rtl"
-          className="relative text-3xl sm:text-4xl font-extrabold text-center mb-10 text-black tracking-wide"
-        >
+        <h2 className="relative text-3xl sm:text-4xl font-extrabold text-center mb-10 text-black tracking-wide">
           كيف تسترجع قيمة الاستثمار في الدبلومة
           <span className="block mx-auto w-20 h-1 bg-red-600 mt-3 rounded-full"></span>
         </h2>
@@ -70,11 +77,12 @@ const ROISection = () => {
           {roiItems.map((item, i) => (
             <div
               key={i}
-              dir="rtl"
               className="bg-gray-100 p-6 rounded-lg shadow-lg border border-gray-200 hover:border-red-600 transition flex flex-col"
             >
               {item.icon}
-              <h3 className="text-black font-semibold text-lg text-center mb-3">{item.title}</h3>
+              <h3 className="text-black font-semibold text-lg text-center mb-3">
+                {item.title}
+              </h3>
               <ul className="text-sm text-gray-700 space-y-2 leading-relaxed">
                 {item.points.map((point, j) => (
                   <li key={j} className="flex items-start gap-2">

@@ -13,40 +13,38 @@ const Vision = () => (
     <div className="max-w-6xl mx-auto px-4 sm:px-6">
       {/* لماذا دبلومة PDS؟ */}
       <div className="mb-20">
-        <h2
-          className="relative text-3xl sm:text-4xl font-extrabold text-center mb-6 tracking-wide"
-        >
-          لماذا دبلومة <span dir="ltr" className="inline-block text-black">PDS</span>
-          <span className="block mx-auto w-20 h-1 bg-red-600 mt-3 rounded-full"></span>
-        </h2>
+  <h2
+    className="relative text-3xl sm:text-4xl font-extrabold text-center mb-6 tracking-wide"
+  >
+    لماذا دبلومة <span dir="ltr" className="inline-block text-black">PDS</span>
+    <span className="block mx-auto w-20 h-1 bg-red-600 mt-3 rounded-full"></span>
+  </h2>
 
-        {[
-          {
-            title: 'دبلومة مهارية متخصصة:',
-            desc: 'مصممة للأطباء وطلاب طب الأسنان لامتلاك أدوات العصر: التصميم، البراندينج، والعرض الاحترافي.',
-          },
-          {
-            title: 'نتائج عملية:',
-            desc: 'تطبيق مباشر على حالات/عيادات حقيقية + مشاريع بورتفوليو قابلة للنشر.',
-          },
-          {
-            title: 'مرونة كاملة:',
-            desc: 'كورسات مسجلة، دخول مدى الحياة، تحديثات مستمرة، وشهادة إنهاء.',
-          },
-          {
-            title: 'تأثير مهني فوري:',
-            desc: 'تحسين قبول الحالات، رفع ثقة المريض، وتسريع نمو العيادة والسمعة الأكاديمية.',
-          },
-        ].map((item, i) => (
-          <p
-            key={i}
-            dir="rtl"
-            className="mt-4 text-gray-700 text-base sm:text-lg max-w-3xl mx-auto text-center leading-relaxed"
-          >
-            <span className="font-semibold text-black">{item.title}</span> {item.desc}
-          </p>
-        ))}
-      </div>
+  {[
+    {
+      title: 'دبلومة مهارية متخصصة:',
+      desc: 'مصممة للأطباء وطلاب طب الأسنان لامتلاك أدوات العصر: التصميم، البراندينج، والعرض الاحترافي.',
+    },
+    {
+      title: 'نتائج عملية:',
+      desc: 'تطبيق مباشر على حالات/عيادات حقيقية + مشاريع بورتفوليو قابلة للنشر.',
+    },
+    {
+      title: 'مرونة كاملة:',
+      desc: 'كورسات مسجلة، دخول مدى الحياة، تحديثات مستمرة، وشهادة إنهاء.',
+    },
+    {
+      title: 'تأثير مهني فوري:',
+      desc: 'تحسين قبول الحالات، رفع ثقة المريض، وتسريع نمو العيادة والسمعة الأكاديمية.',
+    },
+  ].map((item, i) => (
+    <div key={i} dir="rtl" className="mt-6 max-w-3xl mx-auto text-right">
+      <p className="font-semibold text-black text-lg sm:text-xl">{item.title}</p>
+      <p className="text-gray-700 text-base sm:text-lg leading-relaxed mt-1">{item.desc}</p>
+    </div>
+  ))}
+</div>
+
 
       {/* رؤيتنا في PDS */}
       <h2

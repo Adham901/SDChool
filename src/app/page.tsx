@@ -82,8 +82,8 @@ export default function LandingPageDark() {
       <FAQ />
       <CTA />
 
-      <footer className="bg-[#1a1a1a] border-t border-gray-700 mt-16">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 py-8 flex flex-col md:flex-row items-center justify-between gap-3 text-sm text-gray-400">
+      <footer  className="bg-[#1a1a1a]  border-t border-gray-700 mt-16">
+        <div className="max-w-6xl  mx-auto px-4 sm:px-6 py-8 flex flex-col md:flex-row items-center justify-between gap-3 text-sm text-gray-400">
           <div>© {new Date().getFullYear()} Para Dental School</div>
           <div className="flex items-center gap-5">
             <a href="#" className="hover:text-rose-400">الشروط</a>
@@ -111,6 +111,11 @@ export default function LandingPageDark() {
           opacity: 1;
           transform: translateX(0);
         }
+
+
+
+
+        
       `}</style>
     </main>
   );

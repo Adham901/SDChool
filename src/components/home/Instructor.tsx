@@ -1,44 +1,72 @@
 /* =======================
-   👨‍🏫 Instructor
+   👨‍🏫 Instructor (Compact Card Layout)
    ======================= */
+'use client';
 import React from 'react';
 import Image from 'next/image';
 
 const Instructor = () => (
   <section className="slide-section opacity-0 transform transition-all duration-700 py-16 bg-[#1a1a1a] text-gray-300">
-    <div className="max-w-5xl mx-auto px-4 sm:px-6 text-center">
-      <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-wide text-center relative">
-  عن المحاضر
-  <span className="block mx-auto w-20 h-1  bg-red-600 rounded-full"></span>
-</h2>
+    <div className="max-w-3xl mx-auto px-4 text-center">
+      {/* ===== Title ===== */}
+      <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-wide mb-8">
+        About Me
+        <span className="block mx-auto w-20 h-1 bg-red-600 rounded-full mt-2"></span>
+      </h2>
 
-      <p className="mt-3 text-gray-300 text-base sm:text-lg max-w-3xl mx-auto leading-relaxed">
-        DR - MOHAMED ELBAZ — مصمم بصري، مؤسس Para Dental School ووكالات إعلامية متخصصة في المجال الطبي.
-      </p>
+      {/* ===== Image ===== */}
+      <div className="relative w-32 h-32 sm:w-40 sm:h-40 mx-auto rounded-full overflow-hidden shadow-lg border-4 border-gray-700">
+        <Image
+          src="/loading2.jpg"
+          alt="Profile"
+          fill
+          className="object-cover rounded-full"
+          sizes="(max-width: 768px) 100vw, 33vw"
+          priority
+        />
+      </div>
 
-      <div className="mt-10 flex flex-col sm:flex-row items-center gap-8 justify-center">
-        {/* الصورة */}
-        <div className="relative w-32 h-32 sm:w-40 sm:h-40 rounded-full overflow-hidden flex items-center justify-center shadow-lg border-4 border-gray-800">
-          <Image
-            src="/loading2.jpg"
-            alt="Profile"
-            fill
-            className="object-cover rounded-full"
-            sizes="(max-width: 768px) 100vw, 33vw"
-            priority
-          />
+      {/* ===== Card ===== */}
+      <div className="mt-10 bg-[#2a2a2a] text-gray-200 rounded-2xl shadow-lg border border-gray-700 p-6 sm:p-8 text-left space-y-6">
+        {/* About */}
+        <div>
+          <h3 className="text-xl font-semibold text-white mb-2 border-b border-red-600 pb-1 inline-block">
+            About
+          </h3>
+          <p className="text-sm sm:text-base leading-relaxed">
+            A visual designer and the founder of <span className="text-white font-semibold">Para Dental School</span> — 
+            the first platform in the Middle East focused on teaching visual and media skills for dental professionals.
+            <br />
+            Specialized in integrating creative tools into dental communication and marketing.
+          </p>
         </div>
 
-        {/* النصوص */}
-        <div className="text-center sm:text-left max-w-md">
-          <div className="font-bold text-xl sm:text-2xl text-white">{`MOHAMED ELBAZ`}</div>
-          <div className="text-sm sm:text-base text-rose-400 mt-1">
-            Visual & Motion Designer — Founder of Para Dental School
+        {/* Skills */}
+        <div>
+          <h3 className="text-xl font-semibold text-white mb-2 border-b border-red-600 pb-1 inline-block">
+            Skills
+          </h3>
+          <div className="grid grid-cols-2 gap-x-6 gap-y-1 text-sm sm:text-base">
+            <p>• Graphic Design</p>
+            <p>• Motion Graphics</p>
+            <p>• 3D & CGI Design</p>
+            <p>• Presentation Design</p>
+            <p>• UI/UX Design</p>
+            <p>• Videography</p>
+            <p>• Video Editing</p>
+            <p>• Media Buying</p>
           </div>
-          <ul className="mt-4 space-y-1 text-sm sm:text-base text-gray-300">
-            <li>Graphic & Motion Design</li>
-            <li>3D / CGI / Presentation Design</li>
-            <li>Media Buying & Videography</li>
+        </div>
+
+        {/* Entrepreneur */}
+        <div>
+          <h3 className="text-xl font-semibold text-white mb-2 border-b border-red-600 pb-1 inline-block">
+            Entrepreneur
+          </h3>
+          <ul className="text-sm sm:text-base leading-relaxed space-y-1">
+            <li>• Founder of Para Dental School (PDS) – The first hub to teach Dental Motion Design in the Middle East.</li>
+            <li>• Founder of ZED – A specialized dental marketing agency.</li>
+            <li>• Founder of Five Slash – One of the largest cafés in Mansoura, Egypt.</li>
           </ul>
         </div>
       </div>

@@ -49,112 +49,198 @@ const CoursesSection = () => {
       pitch: 'صمم فيديوهات سريعة باستخدام الهاتف فقط قبل/ بعد الحالات',
     },
   ];
-  const courseDetails: Record<
-    string,
-    {
+const courseDetails: Record<
+  string,
+  {
+    title: string;
+    subtitle: string;
+    description: string;
+    sections: {
       title: string;
-      subtitle: string;
-      description: string;
-      sections: { title: string; items: string[] }[];
-    }
-  > = {
-    'motion-desktop': {
-      title: 'Dental Motion Design',
-      subtitle: 'إنتاج فيديوهات تعليمية وتسويقية متقدمة',
-      description:
-        'هذا الكورس يتيح لك احتراف تصميم فيديوهات موشن ديزاين متخصصة لطب الأسنان باستخدام برامج أدوبي، مع تعلم كيفية تحويل الحالات الطبية إلى فيديو جذاب ومفهوم.',
-      sections: [
-        { title: 'البرامج المستخدمة:', items: ['Adobe After Effects', 'Adobe Illustrator'] },
+      items: {
+        title: string;
+        description?: string; // اختياري
+      }[];
+    }[];
+  }
+> = {
+  'motion-desktop': {
+    title: 'Dental Motion Design',
+    subtitle: 'إنتاج فيديوهات تعليمية وتسويقية متقدمة',
+    description:"كورس الموشن ديزاين بيعلمك تعمل فيديوهات احترافيه متخصصه لطب الاسنان ",
+    sections: [
+      {
+        title: 'البرامج المستخدمة:',
+        items: [
+          { title: 'Adobe After Effects', description: '' },
+        ],
+      },
+      {
+        title: 'المتطلبات:',
+        items: [
+          { title: 'جهاز لابتوب RAM 16+', description: '' },
+          { title: 'كارت شاشة قوي', description: '' },
+          { title: 'اشتراك لبرامج ادوبي وسيتم توفيرها ف الكورس بسعر رمزي لتعاون PDS مع شركات مختصه', description: '' },
+        ],
+      },
+      {
+        title: 'أهمية الكورس:',
+        items: [
+          {
+            title: 'احتراف عمل فيديوهات تسويقية للعيادات والمراكز',
+            description: '',
+          },
+          {
+            title: 'تكوين شبكة علاقات مع الأطباء من خلال تقديم خدماتك',
+            description: '',
+          },
+          {
+            title: 'التميز الأكاديمي وشرح الحالات بأسلوب بصري جذاب',
+            description: 'يساعد الموشن ديزاين على تحويل المعلومات الطبية المعقدة إلى فيديوهات تعليمية بسيطة وسهلة الفهم، مما يعزز الفهم لدى المرضى أو الزملاء ويساعد الطلاب على تقديم مشاريع أو أبحاث بصريًا بطريقة احترافية.',
+          },
+          {
+            title: 'تسويق شخصي قوي على السوشيال ميديا',
+            description: 'الطبيب أو الطالب اللي يقدر يصمم فيديوهات موشن بنفسه يقدر يبني براند شخصي مؤثر على إنستجرام، تيك توك أو يوتيوب، ويجذب جمهور كبير بسهولة، سواء مرضى أو متابعين مهتمين بالتوعية الطبية.',
+          },
+          {
+            title: 'تطوير مهارات عرض الحالات والإقناع',
+            description: 'باستخدام الموشن ديزاين، تقدر تعرض خطة علاج أو توضيح إجراء طبي للمريض بطريقة احترافية وسلسة، وده بيسهّل الإقناع، ويزيد من قبول المرضى للعلاج.',
+          },
+          {
+            title: 'ميزة تنافسية في سوق العمل',
+            description: 'قليل من الأطباء أو الطلاب عندهم المهارة دي، فامتلاكك لها بيديك فرصة تبرز وسط الزملاء، سواء في تقديم نفسك للعيادات، التقديم على فرص أكاديمية، أو حتى إطلاق مشاريعك الخاصة.',
+          },
+        ],
+      },
+    ],
+  },
+  presentation: {
+  title: 'Dental Presentation Design',
+  subtitle: 'العروض التقديمية الطبية والبحثية',
+  description:'كورس البرزنتيشن ديزاين بيعلمك تصمم برزنتيشن بطريقه احترافيه سواء ليك او للطلبه او للدكاتره لعرض الحالات او لمحاضرين الكورسات',
+  sections: [
+    { title: 'البرامج المستخدمة:', items: [{ title: ' Canva' }] },
+    {
+      title: 'المتطلبات:',
+      items: [
+        { title: '  جهاز كمبيوتر / لابتوب اي جهاز بدون مواصفات معينه' },
+        { title: 'او جهاز ايباد او تابلت' },
+        { title: 'او موبايل ايا كان النوع' },
+      ],
+    },
+    {
+      title: 'أهمية الكورس:',
+      items: [
         {
-          title: 'المتطلبات:',
-          items: [
-            'جهاز لابتوب RAM 16+',
-            'كارت شاشة قوي',
-            'اشتراك لبرامج ادوبي وسيتم توفيرها ف الكورس بسعر رمزي لتعاون PDS مع شركات مختصه ',
-          ],
+          title: 'احتراف تقديم الأبحاث والحالات في المؤتمرات والجامعات',
+          description:
+            'الكورس بيعلمك إزاي تصمم سلايدات قوية بصريًا، تسهّل توصيل المعلومة وتخلي أي برزنتيشن طبي أو أكاديمي يظهر بمستوى عالمي',
         },
         {
-          title: 'أهمية الكورس:',
-          items: [
-            'احتراف عمل فيديوهات تسويقية للعيادات والمراكز',
-            'تكوين شبكة علاقات مع الأطباء من خلال تقديم خدماتك',
-            'التميز الأكاديمي وشرح الحالات بأسلوب بصري جذاب',
-            'تسويق شخصي قوي على السوشيال ميديا',
-            'تطوير مهارات عرض الحالات والإقناع',
-            'ميزة تنافسية في سوق العمل',
-          ],
+          title: 'جذب الانتباه والتأثير في لجان التحكيم أو الحضور',
+          description:
+            'بدل السلايدات التقليدية المملة، هتتعلم تعمل عروض تفاعلية ومقنعة، تخلي الحضور مركز معك طول الوقت، وتسيب انطباع احترافي ومميز',
+        },
+        {
+          title: 'دعم خطط العلاج ورفع ثقة المرضى',
+          description:
+            'لو بتعرض خطة علاج أو case explanation، العرض المصمم بشكل صح بيساعد المريض يفهم، يتفاعل، ويثق فيك أكتر.',
+        },
+        {
+          title: 'مهارة أساسية لأي طبيب بيشتغل أو بيعلم',
+          description:
+            'سواء كنت طالب، طبيب امتياز، أو حتى محاضر… مهارة تصميم البرزنتيشن بتميزك وبتخليك دايمًا جاهز لأي فرصة محتاجة عرض بصري محترف.',
         },
       ],
     },
+  ],
+},
 
-    presentation: {
-      title: 'Dental Presentation Design',
-      subtitle: 'العروض التقديمية الطبية والبحثية',
-      description:
-        'كورس مخصص لتعلم تصميم عروض تقديمية تفاعلية توضح الحالات والعلاجات بأسلوب احترافي بصري وأكاديمي.',
-      sections: [
-        { title: 'البرامج المستخدمة:', items: ['PowerPoint', 'Adobe Photoshop', 'Canva'] },
+   graphic: {
+  title: 'Dental Graphic Design',
+  subtitle: 'التصميم البصري لهوية العيادات',
+  description:
+   'كورس جرافيك ديزاين بيعلمك تصمم بوستات سوشيال ميديا للعيادات تظهر فيها خدمات العياده والعروض الحصريه',
+  sections: [
+    { title: 'البرامج المستخدمة:', items: [{ title: 'Canva' }] },
+    {
+      title: 'المتطلبات:',
+        items: [
+        { title: '  جهاز كمبيوتر / لابتوب اي جهاز بدون مواصفات معينه' },
+        { title: 'او جهاز ايباد او تابلت' },
+        { title: 'او موبايل ايا كان النوع' },
+      ],
+    },
+    {
+      title: 'أهمية الكورس:',
+      items: [
         {
-          title: 'المتطلبات:',
-          items: ['جهاز كمبيوتر / لابتوب', 'إلمام أساسي بالتصميم', 'رغبة في عرض الحالات بشكل جذاب'],
+          title: 'تحويل العيادة إلى براند بصري مميز',
+          description:
+            'من خلال الجرافيك ديزاين، هتتعلم إزاي تصمّم هوية بصرية متكاملة للعيادة: ألوان، خطوط، أسلوب تصميم ثابت… يخلي كل بوست يعبر عنك ويوصل صورة احترافية للناس',
         },
         {
-          title: 'أهمية الكورس:',
-          items: [
-            'احتراف تقديم الأبحاث والحالات في المؤتمرات والجامعات',
-            'جذب الانتباه والتأثير في لجان التحكيم أو الحضور',
-            'دعم خطط العلاج ورفع ثقة المرضى',
-            'مهارة أساسية لأي طبيب يعمل أو يدرّس',
-          ],
+          title: 'إبراز العروض والخدمات بشكل يشد الانتباه',
+          description:
+            'بدل بوستات تقليدية، هتقدر تصمّم إعلانات جذابة تعرض عروض الأسنان، التقويم، التبييض وغيرها بطريقة تشجع المتابعين يتواصلوا مع العيادة.',
+        },
+        {
+          title: 'توفير تكاليف التصميم الخارجي والتحكم الكامل في محتواك',
+          description:
+            'بدل ما تعتمد على مصمم كل مرة، هتكون أنت اللي بتصمّم كل بوست بنفسك، وده بيوفر وقت وتكاليف كتير، وكمان بيخليك أسرع في الرد على المناسبات والعروض المفاجئة',
+        },
+        {
+          title: 'جذب متابعين وتحويلهم لمرضى فعليين',
+          description:
+            'التصميم القوي مش بس شكله حلو، هو أداة تسويقية بتخلي أي بوست يوصل الرسالة ويحقق هدفه… سواء حجز، استفسار، أو حتى بناء ثقة طويلة المدى',
         },
       ],
     },
+  ],
+},
 
-    graphic: {
-      title: 'Dental Graphic Design',
-      subtitle: 'التصميم البصري لهوية العيادات',
-      description:
-        'في هذا الكورس ستتعلم كيفية تصميم بوستات، إعلانات، وشعارات تساعد في بناء هوية بصرية مميزة لعيادتك أو لعملائك.',
-      sections: [
-        { title: 'البرامج المستخدمة:', items: ['Adobe Photoshop', 'Adobe Illustrator'] },
-        {
-          title: 'المتطلبات:',
-          items: ['جهاز كمبيوتر متوسط الأداء', 'اهتمام بالتصميم والسوشيال ميديا'],
-        },
-        {
-          title: 'أهمية الكورس:',
-          items: [
-            'تحويل العيادة إلى براند بصري مميز',
-            'إبراز العروض والخدمات بشكل يشد الانتباه',
-            'توفير تكاليف التصميم الخارجي والتحكم الكامل في محتواك',
-            'جذب العملاء وتحويلهم لمرضى فعليين',
-          ],
-        },
-      ],
-    },
 
-    'motion-phone': {
-      title: 'Dental Motion Design With Phone',
-      subtitle: 'صمم محتوى احترافي باستخدام هاتفك فقط',
-      description:
-        'كورس عملي لتصميم فيديوهات قبل وبعد الحالات، والإعلانات القصيرة على الهاتف بدون الحاجة لبرامج معقدة.',
-      sections: [
-        { title: 'التطبيقات المستخدمة:', items: ['CapCut', 'VN Video Editor'] },
+   'motion-phone': {
+  title: 'Dental Motion Design With Phone',
+  subtitle: 'صمم محتوى احترافي باستخدام هاتفك فقط',
+  description:'كورس الموشن ديزاين ب استخدام الموبايل بيعلمك تعمل فيديوهات سريعه قبل وبعد للحالات ، ميزه الكورس انك ممكن تعمل فيديو ف ١٠ دقايق ب الموبايل ولكن طبعا مش ب احترافيه اللابتوب ولكن ك قيمه مقابل وقت و جهد ف هو الاقوي',
+    
+  sections: [
+    { title: 'التطبيقات المستخدمة:', items: [{ title: 'Canva' }, { title: 'VN Video Editor' }] },
+    {
+      title: 'المتطلبات:',
+      items: [
+        { title: 'هاتف ايا كان النوع ' },
+      ],
+    },
+    {
+      title: 'أهمية الكورس:',
+      items: [
         {
-          title: 'المتطلبات:',
-          items: ['هاتف حديث بكاميرا جيدة', 'تطبيقات مجانية', 'إبداع في العرض'],
+          title: 'تقدر تعمل فيديوهات توضيحية للحالات أو العروض في دقائق',
+          description:
+            'من غير برامج معقدة أو مونتاج طويل، الكورس بيعلمك إزاي تستخدم موبايلك بس لتصميم فيديوهات جذابة تشرح حالة، تعرض قبل وبعد، أو تروج لخدمة معينة.',
         },
         {
-          title: 'أهمية الكورس:',
-          items: [
-            'تقدر تعمل فيديوهات توضيحية للحالات أو العروض في دقائق',
-            'مناسب جدًا للناس اللي معندهاش لابتوب أو وقت',
-            'بداية ذكية لدخل إضافي من تصميم الفيديوهات',
-            'قوة براند شخصي على السوشيال ميديا بدون مصاريف عالية',
-          ],
+          title: 'مناسب جدًا للناس اللي معندهاش لابتوب أو وقت',
+          description:
+            'لو وقتك ضيق أو إمكانياتك محدودة، الكورس بيقدملك حلول سهلة وسريعة تخليك تبدأ فورًا، وتنتج محتوى احترافي من موبايلك في أي وقت ومن أي مكان.',
+        },
+        {
+          title: 'بداية ذكية لدخل إضافي من تصميم الفيديوهات',
+          description:
+            'المهارة دي مش بس مفيدة لعيادتك، تقدر كمان تقدمها كخدمة لزملاء أو عيادات تانية وتبدأ تعمل دخل من تصميم فيديوهات سريعة توضح خدماتهم أو عروضهم.',
+        },
+        {
+          title: 'قوة براند شخصي على السوشيال ميديا من غير مصاريف عالية',
+          description:
+            'كل دكتور أو طالب أسنان يقدر يبرز نفسه بذكاء على إنستجرام أو تيك توك بفيديوهات متقنة وسهلة، من غير ما يستنى مصمم أو فريق تسويق.',
         },
       ],
     },
+  ],
+},
+
   };
 
     const selected = selectedCourse ? courseDetails[selectedCourse] : null;
@@ -166,7 +252,17 @@ const CoursesSection = () => {
       className="slide-section opacity-0 transform transition-all duration-700 py-16 bg-white text-black"
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
+  
+
         <div className="text-center">
+  <h2 className="text-3xl sm:text-4xl font-extrabold text-center mb-6 tracking-wide">
+  <span className="text-black">ماذا نقدم </span>
+  <span className="text-red-600">حتى الآن</span>
+  <span className="text-black"> ؟</span>
+</h2>
+
+
+
           <h2 className="text-3xl font-bold text-black">
             الدورات
             <span className="block mx-auto w-20 h-1 bg-red-600 mt-3 rounded-full"></span>
@@ -196,7 +292,7 @@ const CoursesSection = () => {
               <div className="flex flex-col justify-between flex-grow p-5 text-center">
                 <div>
                   <h3 className="font-semibold text-lg text-black">{c.title}</h3>
-                  <p className="text-gray-700 mt-2 text-sm">{c.pitch}</p>
+                  
                 </div>
 
                 <div className="mt-6 flex justify-center gap-4">
@@ -220,36 +316,51 @@ const CoursesSection = () => {
       </div>
 
       {selected && (
-        <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4">
-          <div className="bg-gray-100 text-black max-w-2xl w-full rounded-xl p-6 relative">
-            <button
-              onClick={() => setSelectedCourse(null)}
-              className="absolute top-3 right-3 text-gray-700 hover:text-black"
-            >
-              <X className="w-5 h-5" />
-            </button>
+  <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4">
+    <div className="bg-gray-100 text-black max-w-2xl w-full rounded-xl p-6 relative flex flex-col max-h-[90vh] overflow-hidden">
+      {/* زراغلاق */}
+      <button
+        onClick={() => setSelectedCourse(null)}
+        className="absolute top-3 right-3 text-gray-700 hover:text-black"
+      >
+        <X className="w-5 h-5" />
+      </button>
 
-            <h2 className="text-2xl font-bold text-black mb-1">{selected.title}</h2>
-            <p className="text-red-600 text-sm mb-4">{selected.subtitle}</p>
-            <p className="text-gray-700 mb-6">{selected.description}</p>
+      {/* اجعل المحتوى قابل للتمرير */}
+      <div className="overflow-y-auto pr-2">
+        <h2 className="text-2xl font-bold text-black mb-1">{selected.title}</h2>
+        <p className="text-red-600 text-sm mb-4">{selected.subtitle}</p>
+        <p className="text-gray-700 mb-6">{selected.description}</p>
 
-            {selected.sections.map((sec, i) => (
-              <div key={i} className="mb-4">
-                <h3 className="text-lg font-semibold text-black mb-2">{sec.title}</h3>
-                <ul className="space-y-1 text-sm" dir="auto">
-                  {sec.items.map((item, j) => (
-                    <li key={j} className="flex items-start gap-2">
-                      <Check className="w-4 h-4 text-red-600 mt-1" />
-                      <span className="leading-tight">{wrapLatin(item)}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+        {selected.sections.map((sec, i) => (
+          <div key={i} className="mb-4">
+            <h3 className="text-lg font-semibold text-black mb-2">{sec.title}</h3>
+            <ul className="space-y-4 text-sm" dir="auto">
+              {sec.items.map((item, j) => (
+                <li key={j} className="flex flex-col gap-1">
+                  <div className="flex items-start gap-2">
+                    <Check className="w-4 h-4 text-red-600 mt-1" />
+                    <span className="leading-tight font-semibold">{wrapLatin(item.title)}</span>
+                  </div>
+                  {item.description && (
+                    <p className="text-gray-600 text-sm mr-6">{wrapLatin(item.description)}</p>
+                  )}
+                </li>
+              ))}
+            </ul>
           </div>
-        </div>
-      )}
+        ))}
+      </div>
+    </div>
+  </div>
+)}
+
+
+      
     </section>
+
+
+
   );
 };
 
