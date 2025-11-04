@@ -1,6 +1,7 @@
 import './globals.css'
 import ClientLoader from '../components/ui/clientloader'
 import Script from 'next/script' // ⬅️ أضف هذا الاستيراد
+import { Analytics } from '@vercel/analytics/next'
 
 export const metadata = {
   title: 'PDSchool',
@@ -12,7 +13,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body className="bg-gray-900 text-white">
         <ClientLoader>{children}</ClientLoader>
-
+        <Analytics />
         {/* ✅ Google Analytics */}
         <Script
           async
