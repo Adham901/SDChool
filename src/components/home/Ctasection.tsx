@@ -23,7 +23,7 @@ const CTA = () => (
       <div className="flex flex-col sm:flex-row items-center gap-3">
         {/* 🔗 Instagram */}
         <a
-          href="https://www.instagram.com/dr.mohamed.elbazz?igsh=MWgwZnFpc2ltNjI4dQ=="
+          href="https://www.instagram.com/para_dental_school?igsh=bzRzdzU3N3o1ZjRi"
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center gap-2 bg-white text-rose-600 px-5 py-3 rounded-md font-semibold hover:bg-gray-100 transition transform hover:scale-105"
@@ -34,7 +34,7 @@ const CTA = () => (
 
         {/* 💬 WhatsApp */}
         <a
-          href="https://wa.me/201557447017"
+          href="https://wa.me/201559993392"
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center gap-2 bg-green-500 text-white px-5 py-3 rounded-md font-semibold hover:bg-green-600 transition transform hover:scale-105"
